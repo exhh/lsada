@@ -10,7 +10,7 @@ Step 2: Train the source model (specify a proper path for the dataset): ./train_
 Step 3: Train the low-resource adversrial domain adaptation model (specify proper paths for the source model and datasets): ./train.sh
 
 
-**Testing:**
+**Testing:** <br /> 
 Given new target images, run the script for model predition (specify proper paths for models and datasets): ./test.sh
 
 <br /> 
