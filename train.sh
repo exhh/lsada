@@ -11,8 +11,8 @@ batch_size=1
 gpu=1
 result=learned_models
 
-pretrain_weights=${result}/${source}/detector_best.pth
-pretrain_weights_a=${result}/${source}/detector_best.pth
+pretrain_weights=PATH_TO_SOURCE_MODEL
+pretrain_weights_a=PATH_TO_SOURCE_MODEL
 outdir=${result}/${source}2${target}
 python train.py ${outdir} \
     --datadir ${datadir} \
@@ -28,5 +28,4 @@ python train.py ${outdir} \
     --pretrain_weights ${pretrain_weights} \
     --pretrain_weights_a ${pretrain_weights_a} \
     --use_crossdomain \
-    --use_validation \
     --augment_probability ${augment_probability}
