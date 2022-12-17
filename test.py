@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 from codes.data.datasets import SingleDataset
 from codes.models import get_model
 from codes.models.models import models
-from codes.tools.evaluation import eval_folder
 from codes.tools.util import get_seed_name
 import numpy as np
 import scipy.io as sio
