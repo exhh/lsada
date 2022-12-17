@@ -2,7 +2,7 @@
 This code implements a low-resource advaersarial domain adaptation method [1] for cross-domain cell/nuclei detection in digital pathology and microscopy images, when target training data is limited. The code is implemented with PyTorch (version 0.4.1) on a Ubuntu Linux machine. <br /> 
 
 
-**Training:** 
+**Training:** <br /> 
 Step 1: Given the gold standard annotations of cells/nuclei in each traing image, generate the correpsonding proximity map for each image by following the description in [1] and store the images and proximity maps in proper folders.
 
 Step 2: Train the source model (specify a proper path for the dataset): ./train_source.sh
