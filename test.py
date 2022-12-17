@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 from codes.data.datasets import SingleDataset
 from codes.models import get_model
 from codes.models.models import models
-from codes.tools.evaluation import eval_folder
 from codes.tools.util import get_seed_name
 import numpy as np
 import scipy.io as sio
@@ -73,17 +72,6 @@ def main(outdir, train_val_test, target, datadir, detector, use_tanh, model_path
 
                 resultsDict[localseedname] = coordinates
             sio.savemat(resultDictPath_mat, resultsDict)
-
-        imgfolder = os.path.join(datadir, target, 'images', data_split)
-        print('Quantitative evaluation: ', quan_eval)
-        radius_pool = [16]
-        gd_name = 'centers'
-        if quan_eval:
-            modelfolder = checkpoint
-            eval_savefolder = savefolder
-            eval_folder(imgfolder= imgfolder, resfolder= savefolder_det, savefolder=eval_savefolder,
-                                        radius_pool=radius_pool, resultmask = modelfolder, thresh_pool=pred_threshold_pool,
-                                        len_pool= [local_max_len], imgExt=['.bmp', '.jpg','.png'], contourname=gd_name)
-
+            
 if __name__ == '__main__':
     main()
