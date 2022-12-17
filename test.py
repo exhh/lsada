@@ -6,6 +6,7 @@ from torch.utils.data import DataLoader
 from codes.data.datasets import SingleDataset
 from codes.models import get_model
 from codes.models.models import models
+from codes.tools.evaluation import eval_folder
 from codes.tools.util import get_seed_name
 import numpy as np
 import scipy.io as sio
@@ -23,8 +24,7 @@ from  skimage.feature import peak_local_max
 @click.option('--model_path', default="", type=click.Path(exists=True))
 @click.option('--checkpoint', default="")
 @click.option('--gpu', default='0')
-@click.option('--quan_eval/--no_quan_eval', default=True)
-def main(outdir, train_val_test, target, datadir, detector, use_tanh, model_path, checkpoint, gpu, quan_eval):
+def main(outdir, train_val_test, target, datadir, detector, use_tanh, model_path, checkpoint, gpu):
     os.environ['CUDA_VISIBLE_DEVICES'] = gpu
 
     print('Models:', 'detector=' + detector, 'use_tanh = ' + str(use_tanh), sep=' ')
@@ -72,6 +72,6 @@ def main(outdir, train_val_test, target, datadir, detector, use_tanh, model_path
 
                 resultsDict[localseedname] = coordinates
             sio.savemat(resultDictPath_mat, resultsDict)
-            
+
 if __name__ == '__main__':
     main()

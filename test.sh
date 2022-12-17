@@ -2,7 +2,7 @@ source=Breast
 target=Bone
 datadir=datasets
 detector=micronet
-checkpoint=GANdet_best
+checkpoint=PATH_TO_LEARNED_MODEL
 gpu=2
 split_test=test
 outdir=experiments
@@ -15,5 +15,4 @@ python test.py ${outdir} \
     --detector ${detector} \
     --model_path ${model_path} \
     --checkpoint ${checkpoint} \
-    --gpu ${gpu} \
-    --quan_eval
+    --gpu ${gpu}
