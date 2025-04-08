@@ -3,9 +3,9 @@ This code implements a low-resource advaersarial domain adaptation method [1][2]
 
 
 **Training:** <br /> 
-Step 1: Given the gold standard annotations of cells/nuclei in each traing image, generate the correpsonding proximity map for each image by following the description in [1][2] and store the images and proximity maps in proper folders.
+Step 1: Given the gold standard annotations of cells/nuclei in each traing image, generate the correpsonding proximity map for each image by following the description in [1][2] and store the images and proximity maps in the "datasets" folder.
 
-Step 2: Train the source model (specify a proper path for the dataset): ./train_source.sh
+Step 2: Train the source model (specify the path for the dataset): ./train_source.sh
 
 Step 3: Train the low-resource adversrial domain adaptation model (specify proper paths for the source model and datasets): ./train.sh
 
